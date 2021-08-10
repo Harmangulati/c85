@@ -4,14 +4,14 @@ background_image = "parkingLot.jpg";
 greencar_image = "car2.png";
 greencar_Y=225;
 greencar_X=5;
-greencar_width=100;
-greencar_height=90;
+greencar_width=75;
+greencar_height=100;
 function add() {
 	background_imgTag=new Image();
-	backgroung_imgTag.onload=upload_background;
+	backgroung_imgTag.onload=uploadBackground;
 	background_imgTag.src=background_image;
 	greencar_imgTag=new Image();
-	greencar_imgTag.onload=upload_car;
+	greencar_imgTag.onload=uploadgreencar;
 	greencar_imgTag.src=greencar_image;
 	}
 
@@ -61,35 +61,38 @@ function up()
 {
 	if (greencar_Y>=0){
 		green_Y=greencar_Y-10;
-		console.log("when up arrow is pressed,x= "+rover_x+"|y="+rover_y);
-	   upload_background();
-	   upload_greencar();   
-		} 
+		console.log("When up arrow is pressed, x = " + greencar_X + " | y = " +greencar_Y); 
+		uploadBackground(); 
+		uploadgreencar();
+	} 
 }
 
 function down()
 {
-	if (greencar_Y>=500){
+	if (greencar_Y<=350){
 		greencar_Y=greencar_Y+10;
-		console.log("when down arrow is pressed,x= "+greencar_X+"|y="+greencar_Y);
-	   upload_background();
-	   upload_greencar();
-}
+		console.log("When down arrow is pressed, x = " + greencar_X + " | y = " +greencar_Y); 
+		uploadBackground(); 
+		uploadgreencar();
+	}
 
-function left()
-{
-	if (greencar_X>=0){
-		greencar_X=greencar_X-10;
-		console.log("when left arrow is pressed,x= "+greencar_X"|y="+greencar_Y);
-	   upload_background();
-	   upload_greencar(); 
 }
-
-function right()
-{
-	if (greencar_X>=700){
-		greencar_X=greencar_X+10;
-		console.log("when right arrow is pressed,x= "+greencar_X+"|y="+greencar_Y);
-	   upload_background();
-	   upload_greencar(); 
-}
+		function left()
+		{
+			if (greencar_X>=0){
+				greencar_X=greencar_X-10;
+				console.log("When left arrow is pressed, x = " + greencar_X + " | y = " +greencar_Y); 
+				uploadBackground(); 
+				uploadgreencar();
+			}
+		}				
+		function right()
+		{
+			if (greencar_X<=750){
+				greencar_X=greencar_X+10;
+				console.log("When right arrow is pressed, x = " + greencar_X + " | y = " +greencar_Y); 
+				uploadBackground(); 
+				uploadgreencar();
+			}
+		}				
+		
